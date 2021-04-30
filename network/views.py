@@ -10,7 +10,7 @@ from django.http import JsonResponse
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import User
+from .models import User, Post
 
 
 def index(request):
@@ -81,7 +81,7 @@ def compose(request):
     data = json.loads(request.body)
     #emails = [email.strip() for email in data.get("recipients").split(",")]
     #content = data.get("content", "")
-    content = data.get("new_post", "")
+    content = data.get("content")
     #content = request.POST.get(content, '')
     # Get contents of email
     #subject = data.get("subject", "")

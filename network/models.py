@@ -16,7 +16,7 @@ class Post(models.Model):
     content = models.CharField(max_length=264)
     #image = models.CharField(max_length=564)
     #bid = models.FloatField()
-    time_of_creation = models.DateField(auto_now_add=False)
+    time_of_creation = models.DateField(auto_now_add=True)
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
     #bid_on = models.BooleanField(default=True)
 
